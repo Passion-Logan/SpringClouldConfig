@@ -2,6 +2,7 @@ package com.cody;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * spring.application.name：对应配置文件规则中的{application}部分
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 这里需要格外注意：上面这些属性必须配置在bootstrap.properties中，这样config-server中的配置信息才能被正确加载。
  * 访问http://localhost:2001/info ，我们可以看到该端点将会返回从git仓库中获取的配置信息
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 public class ConfigClientApplication {
 
